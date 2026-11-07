@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="header">
+            <div>
+                <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+                <h1>Task Manager Pro</h1>
+                <p class="subtitle">Plan your work. Focus on what matters.</p>
+            </div>
+            <div class="date-display" id="currentDate"></div>
+        </header>
+
+        <!-- Statistics -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <p>Total Tasks</p>
+                <h2 id="totalTasks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Completed</p>
+                <h2 id="completedCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Pending</p>
+                <h2 id="pendingCount">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <p>Overdue</p>
+                <h2 id="overdueCount">0</h2>
+            </div>
+
+        </section>
+
+        <!-- Add Task -->
+        <section class="panel">
+
+            <h2>Add a New Task</h2>
+
+            <form id="taskForm">
+
+                <div class="form-group">
+                    <label for="taskInput">Task name</label>
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="What needs to be done?"
+                        maxlength="100"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="dueDate">Due date</label>
+                    <input type="date" id="dueDate">
+                </div>
+
+                <button type="submit" class="add-btn">
+                    + Add Task
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Task List -->
+        <section class="panel">
+
+            <div class="list-header">
+                <h2>My Tasks</h2>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search tasks..."
+                    aria-label="Search tasks"
+                >
+            </div>
+
+            <!-- Filters -->
+            <div class="filters" id="taskFilters">
+
+                <button type="button" data-filter="all" class="filter-btn active">
+                    All
+                </button>
+
+                <button type="button" data-filter="pending" class="filter-btn">
+                    Pending
+                </button>
+
+                <button type="button" data-filter="completed" class="filter-btn">
+                    Completed
+                </button>
+
+                <button type="button" data-filter="overdue" class="filter-btn">
+                    Overdue
+                </button>
+
+            </div>
+
+            <ul id="taskList" class="task-list"></ul>
+
+            <p id="emptyState" class="empty-state" hidden>
+                No tasks found. Add a task to get started!
+            </p>
+
+        </section>
+
+        <footer>
+            <p>Task Manager Pro | Built with HTML, CSS and JavaScript</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
